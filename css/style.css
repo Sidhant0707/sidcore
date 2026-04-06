@@ -104,6 +104,29 @@ body {
 .hero {
   padding: 120px 0 64px;
   background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(30, 58, 95, 0.08) 0%,
+    rgba(30, 58, 95, 0.03) 40%,
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
 }
 .hero-inner { max-width: 680px; margin-bottom: 48px; }
 .hero-badge {

@@ -1,91 +1,56 @@
-gsap.from(".reveal",{
-opacity:0,
-y:40,
-duration:1,
-stagger:0.2,
-ease:"power3.out"
-})
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
 
-const scene=new THREE.Scene()
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
 
-const camera=new THREE.PerspectiveCamera(
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-)
+// Close mobile menu on link click
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+});
 
-const renderer=new THREE.WebGLRenderer({
-canvas:document.querySelector("#bg"),
-alpha:true
-})
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 80) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
 
-renderer.setSize(window.innerWidth,window.innerHeight)
+// Skill bars animate on scroll
+const skillFills = document.querySelectorAll('.skill-fill');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.width = entry.target.style.width;
+    }
+  });
+}, { threshold: 0.3 });
+skillFills.forEach(fill => observer.observe(fill));
 
-camera.position.z=5
-
-const particlesGeometry=new THREE.BufferGeometry()
-
-const particlesCount=2000
-
-const posArray=new Float32Array(particlesCount*3)
-
-for(let i=0;i<particlesCount*3;i++){
-
-posArray[i]=(Math.random()-0.5)*20
-
-}
-
-particlesGeometry.setAttribute(
-"position",
-new THREE.BufferAttribute(posArray,3)
-)
-
-const particlesMaterial=new THREE.PointsMaterial({
-size:0.03,
-color:0xffffff,
-transparent:true,
-opacity:0.7
-})
-
-const particlesMesh=new THREE.Points(
-particlesGeometry,
-particlesMaterial
-)
-
-scene.add(particlesMesh)
-
-let mouseX=0
-let mouseY=0
-
-document.addEventListener("mousemove",(event)=>{
-
-mouseX=(event.clientX/window.innerWidth)-0.5
-mouseY=(event.clientY/window.innerHeight)-0.5
-
-})
-
-function animate(){
-
-requestAnimationFrame(animate)
-
-particlesMesh.rotation.y+=0.001
-
-camera.position.x+= (mouseX*2-camera.position.x)*0.02
-camera.position.y+= (-mouseY*2-camera.position.y)*0.02
-
-renderer.render(scene,camera)
-
-}
-
-animate()
-
-window.addEventListener("resize",()=>{
-
-camera.aspect=window.innerWidth/window.innerHeight
-
-camera.updateProjectionMatrix()
-
-renderer.setSize(window.innerWidth,window.innerHeight)
-
-})
+// Resume button — show alert if not uploaded yet
+document.querySelectorAll('a[href="your-resume-link-here"]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Resume coming soon! Reach me at sidhantkumar0707@gmail.com');
+  });
+});

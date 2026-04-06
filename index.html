@@ -1,515 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Sidhant Kumar — CS Student, SDE Placement Aspirant, AI Tools Builder" />
-  <title>Sidhant Kumar — Sidcore</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sidhant Kumar — CS Student, SDE Placement Aspirant, AI Tools Builder">
+
+<title>Sidhant Kumar — Sidcore</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <span class="logo">sidcore</span>
-        <div class="nav-links">
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#dsa" class="nav-link">DSA</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <button class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#dsa" class="mobile-link">DSA</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-    </div>
-  </nav>
+<!-- NAVBAR -->
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-badge">👋 Open to Internships & SDE Placements</div>
-        <h1>Sidhant Kumar</h1>
-        <p class="hero-sub">
-          6th Semester CS student at GL Bajaj Institute of Technology and Management.
-          Building AI tools, solving DSA problems daily, and preparing for SDE placements.
-        </p>
-        <div class="hero-btns">
-          <a href="your-resume-link-here" class="btn-primary" id="resume-btn" target="_blank">
-            Download Resume ↓
-          </a>
-          <a href="#projects" class="btn-secondary">View Projects →</a>
-        </div>
-        <div class="hero-links">
-          <a href="https://github.com/Sidhant0707" target="_blank" class="hero-link">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/sidhant07" target="_blank" class="hero-link">
-            LinkedIn
-          </a>
-          <a href="https://leetcode.com/Sidhant_07" target="_blank" class="hero-link">
-            LeetCode
-          </a>
-        </div>
-      </div>
+<nav class="navbar" id="navbar">
 
-      <!-- STATS BAR -->
-      <div class="stats-bar">
-        <div class="stat">
-          <span class="stat-num">48</span>
-          <span class="stat-label">LeetCode Problems</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">C++</span>
-          <span class="stat-label">Primary Language</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">4+</span>
-          <span class="stat-label">Projects Shipped</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">6th</span>
-          <span class="stat-label">Semester</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <h2>Projects</h2>
-        <p>Things I have built to learn and solve real problems.</p>
-      </div>
-      <div class="projects-grid">
+<div class="nav-inner">
 
-        <div class="project-card featured">
-          <div class="project-top">
-            <div class="project-badges">
-              <span class="badge-status live">● Live</span>
-              <span class="badge-type">Hackathon</span>
-            </div>
-            <div class="project-icon">🚀</div>
-          </div>
-          <h3>Rolevate AI</h3>
-          <p>AI-powered career roadmap generator. Enter a company and role — get a complete preparation plan with skills, tools, projects, and interview questions.</p>
-          <div class="tech-tags">
-            <span>HTML</span><span>CSS</span>
-            <span>JavaScript</span><span>AI API</span>
-          </div>
-          <div class="project-links">
-            <a href="https://rolevate-ai.vercel.app" class="btn-project-primary" target="_blank">Live Demo →</a>
-            <a href="https://github.com/Sidhant0707/rolevate-ai" class="btn-project-secondary" target="_blank">GitHub</a>
-          </div>
-        </div>
+<span class="logo">sidcore</span>
 
-        <div class="project-card reveal">
-          <div class="project-top">
-            <div class="project-badges">
-              <span class="badge-status github">● GitHub</span>
-            </div>
-            <div class="project-icon">📊</div>
-          </div>
-          <h3>DSA Tracker CLI</h3>
-          <p>Command-line tool built in C++ to track DSA problem-solving progress. Supports adding, viewing, and filtering problems by topic and difficulty.</p>
-          <div class="tech-tags">
-            <span>C++</span><span>CLI</span><span>File I/O</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Sidhant0707" class="btn-project-secondary" target="_blank">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-top">
-            <div class="project-badges">
-              <span class="badge-status live">● Live</span>
-            </div>
-            <div class="project-icon">📧</div>
-          </div>
-          <h3>Gmail Clone</h3>
-          <p>Frontend clone of Gmail focusing on layout architecture, component structure, and pixel-accurate UI reproduction using pure HTML and CSS.</p>
-          <div class="tech-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn-project-primary" target="_blank">Live Demo →</a>
-            <a href="https://github.com/Sidhant0707" class="btn-project-secondary" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-top">
-            <div class="project-badges">
-              <span class="badge-status progress">● In Progress</span>
-            </div>
-            <div class="project-icon">📚</div>
-          </div>
-          <h3>GradeGap</h3>
-          <p>AI learning equity platform that generates personalized micro-learning plans for any topic — giving every student access to quality explanation regardless of background.</p>
-          <div class="tech-tags">
-            <span>HTML</span><span>CSS</span>
-            <span>JavaScript</span><span>AI API</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn-project-secondary" target="_blank">Coming Soon</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DSA SECTION -->
-  <section class="section section-alt" id="dsa">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>DSA Progress</h2>
-        <p>Consistent daily practice following Striver's DSA Sheet.</p>
-      </div>
-      <div class="dsa-grid">
-        <div class="dsa-stats-card">
-          <div class="dsa-platform">
-            <span class="platform-name">LeetCode</span>
-            <a href="https://leetcode.com/Sidhant_07" target="_blank" class="platform-link">@Sidhant_07 ↗</a>
-          </div>
-          <div class="dsa-numbers">
-            <div class="dsa-num">
-              <span class="num">56</span>
-              <span class="num-label">Total Solved</span>
-            </div>
-            <div class="dsa-num easy">
-              <span class="num">31</span>
-              <span class="num-label">Easy</span>
-            </div>
-            <div class="dsa-num medium">
-              <span class="num">24</span>
-              <span class="num-label">Medium</span>
-            </div>
-            <div class="dsa-num hard">
-              <span class="num">1</span>
-              <span class="num-label">Hard</span>
-            </div>
-          </div>
-          <div class="dsa-current">
-            <span class="current-label">Currently Practicing</span>
-            <span class="current-value">Binary Search Patterns</span>
-          </div>
-          <div class="dsa-goal">
-            <span class="goal-label">Target before placements</span>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 32%"></div>
-            </div>
-            <span class="goal-numbers">56 / 300 problems</span>
-          </div>
-        </div>
-
-        <div class="dsa-topics-card">
-          <h3>Topics Covered</h3>
-          <div class="topics-list">
-            <div class="topic done">
-              <span class="topic-dot"></span>
-              <span>Arrays & Strings</span>
-              <span class="topic-status">Done</span>
-            </div>
-            <div class="topic done">
-              <span class="topic-dot"></span>
-              <span>Two Pointers</span>
-              <span class="topic-status">Done</span>
-            </div>
-            <div class="topic active">
-              <span class="topic-dot"></span>
-              <span>Binary Search</span>
-              <span class="topic-status current">In Progress</span>
-            </div>
-            <div class="dsa-topics-card">
-  <h3>DSA Roadmap Progress</h3>
-
-  <div class="topics-list">
-
-    <div class="topic done">
-      <span class="topic-dot"></span>
-      <span>Arrays & Strings</span>
-      <span class="topic-status">Done</span>
-    </div>
-
-    <div class="topic done">
-      <span class="topic-dot"></span>
-      <span>Two Pointers</span>
-      <span class="topic-status">Done</span>
-    </div>
-
-    <div class="topic done">
-      <span class="topic-dot"></span>
-      <span>Binary Search</span>
-      <span class="topic-status">Done</span>
-    </div>
-
-    <div class="topic active">
-      <span class="topic-dot"></span>
-      <span>Linked Lists</span>
-      <span class="topic-status current">In Progress</span>
-    </div>
-
-    <div class="topic upcoming">
-      <span class="topic-dot"></span>
-      <span>Trees & Graphs</span>
-      <span class="topic-status upcoming-tag">Upcoming</span>
-    </div>
-
-    <div class="topic upcoming">
-      <span class="topic-dot"></span>
-      <span>Dynamic Programming</span>
-      <span class="topic-status upcoming-tag">Upcoming</span>
-    </div>
-
-  </div>
+<div class="nav-links">
+<a href="#projects" class="nav-link">Projects</a>
+<a href="#dsa" class="nav-link">DSA</a>
+<a href="#skills" class="nav-link">Skills</a>
+<a href="#about" class="nav-link">About</a>
+<a href="#contact" class="nav-link">Contact</a>
 </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-header">
-        <h2>Skills</h2>
-        <p>Honest assessment of where I stand right now.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <h3 class="skill-group-title">Languages</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">C++</span>
-                <span class="skill-level strong">Strong</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-              <span class="skill-note">Primary language · DSA · OOP</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-level learning">Learning</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
-              <span class="skill-note">Projects · Frontend logic · APIs</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Python</span>
-                <span class="skill-level beginner">Beginner</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:35%"></div></div>
-              <span class="skill-note">Scripting · Data basics</span>
-            </div>
-          </div>
-        </div>
+<button class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
 
-        <div class="skill-group reveal">
-          <h3 class="skill-group-title">Frontend</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">HTML & CSS</span>
-                <span class="skill-level strong">Comfortable</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-              <span class="skill-note">All projects · Responsive design</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Responsive Design</span>
-                <span class="skill-level learning">Practicing</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
-              <span class="skill-note">Mobile-first layouts</span>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <div class="skill-group reveal">
-          <h3 class="skill-group-title">Backend & Tools</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Node.js & Express</span>
-                <span class="skill-level beginner">Exploring</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:30%"></div></div>
-              <span class="skill-note">REST APIs · Server basics</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Git & GitHub</span>
-                <span class="skill-level learning">Regular Use</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-              <span class="skill-note">Version control · All projects</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Docker</span>
-                <span class="skill-level beginner">Beginner</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
-              <span class="skill-note">Containers · Basic usage</span>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <div class="skill-group reveal">
-          <h3 class="skill-group-title">Currently Studying</h3>
-          <div class="currently-list">
-            <div class="currently-item">
-              <span class="currently-icon">📖</span>
-              <div>
-                <span class="currently-name">DBMS</span>
-                <span class="currently-desc">Normalization, SQL, Transactions</span>
-              </div>
-            </div>
-            <div class="currently-item">
-              <span class="currently-icon">💻</span>
-              <div>
-                <span class="currently-name">Operating Systems</span>
-                <span class="currently-desc">Processes, Memory, Scheduling</span>
-              </div>
-            </div>
-            <div class="currently-item">
-              <span class="currently-icon">🌐</span>
-              <div>
-                <span class="currently-name">Computer Networks</span>
-                <span class="currently-desc">TCP/IP, DNS, HTTP</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="mobile-menu" id="mobile-menu">
+<a href="#projects" class="mobile-link">Projects</a>
+<a href="#dsa" class="mobile-link">DSA</a>
+<a href="#skills" class="mobile-link">Skills</a>
+<a href="#about" class="mobile-link">About</a>
+<a href="#contact" class="mobile-link">Contact</a>
+</div>
 
-  <!-- ABOUT -->
-  <section class="section section-alt" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left reveal">
-          <h2>About Me</h2>
-          <p>
-            I'm Sidhant, a CS student from Greater Noida who builds things to learn things.
-            Started with C++ and DSA, moved into web development, and now working on
-            AI-powered tools that solve real problems.
-          </p>
-          <p>
-            Currently preparing for SDE placements — solving DSA problems daily on LeetCode,
-            studying DBMS, OS, and CN fundamentals, and shipping projects that I can talk
-            about in interviews.
-          </p>
-          <p>
-            When I'm not coding I'm probably thinking about what to build next.
-          </p>
-          <div class="about-tags">
-            <span>GL Bajaj Institute</span>
-            <span>Greater Noida</span>
-            <span>B.Tech CS-DS</span>
-            <span>2026 Batch</span>
-          </div>
-        </div>
-        <div class="about-right reveal">
-          <div class="about-card">
-            <div class="about-card-item">
-              <span class="about-card-label">College</span>
-              <span class="about-card-value">GL Bajaj Institute of Technology and Management</span>
-            </div>
-            <div class="about-card-item">
-              <span class="about-card-label">Degree</span>
-              <span class="about-card-value">B.Tech Computer Science (Data Science)</span>
-            </div>
-            <div class="about-card-item">
-              <span class="about-card-label">Semester</span>
-              <span class="about-card-value">6th Semester</span>
-            </div>
-            <div class="about-card-item">
-              <span class="about-card-label">Focus</span>
-              <span class="about-card-value">SDE Placements 2026</span>
-            </div>
-            <div class="about-card-item">
-              <span class="about-card-label">Location</span>
-              <span class="about-card-value">Greater Noida, Uttar Pradesh</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</nav>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <h2>Let's Connect</h2>
-        <p>Open to internship opportunities and SDE placement roles. Feel free to reach out.</p>
-        <div class="contact-links">
-          <a href="mailto:sidhantkumar0707@gmail.com" class="contact-card">
-            <span class="contact-icon">✉️</span>
-            <span class="contact-label">Email</span>
-            <span class="contact-value">sidhantkumar0707@gmail.com</span>
-          </a>
-          <a href="https://www.linkedin.com/in/sidhant07" target="_blank" class="contact-card">
-            <span class="contact-icon">💼</span>
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">linkedin.com/in/sidhant07</span>
-          </a>
-          <a href="https://github.com/Sidhant0707" target="_blank" class="contact-card">
-            <span class="contact-icon">💻</span>
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">github.com/Sidhant0707</span>
-          </a>
-        </div>
-        <div class="resume-cta">
-          <p>Want to see my full background?</p>
-          <a href="your-resume-link-here" class="btn-primary" target="_blank">
-            Download Resume ↓
-          </a>
-          <p class="resume-note">PDF · Updated April 2025</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="logo">sidcore</span>
-        <span class="footer-text">Built by Sidhant Kumar · © 2025</span>
-        <div class="footer-links">
-          <a href="https://github.com/Sidhant0707" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/sidhant07" target="_blank">LinkedIn</a>
-          <a href="mailto:sidhantkumar0707@gmail.com">Email</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<section class="hero" id="home">
 
-  <script src="js/main.js"></script>
+<div class="container">
+
+<div class="hero-inner reveal">
+
+<div class="hero-badge">👋 Open to Internships & SDE Placements</div>
+
+<h1>Sidhant Kumar</h1>
+
+<p class="hero-sub">
+6th Semester CS student at GL Bajaj Institute of Technology and Management.
+Building AI tools, solving DSA problems daily, and preparing for SDE placements.
+</p>
+
+<div class="hero-btns">
+
+<a href="your-resume-link-here" class="btn-primary" target="_blank">
+Download Resume ↓
+</a>
+
+<a href="#projects" class="btn-secondary">
+View Projects →
+</a>
+
+</div>
+
+<div class="hero-links">
+
+<a href="https://github.com/Sidhant0707" target="_blank" class="hero-link">GitHub</a>
+
+<a href="https://www.linkedin.com/in/sidhant07" target="_blank" class="hero-link">LinkedIn</a>
+
+<a href="https://leetcode.com/Sidhant_07" target="_blank" class="hero-link">LeetCode</a>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats-bar">
+
+<div class="stat">
+<span class="stat-num">56</span>
+<span class="stat-label">LeetCode Problems</span>
+</div>
+
+<div class="stat-divider"></div>
+
+<div class="stat">
+<span class="stat-num">C++</span>
+<span class="stat-label">Primary Language</span>
+</div>
+
+<div class="stat-divider"></div>
+
+<div class="stat">
+<span class="stat-num">4+</span>
+<span class="stat-label">Projects Shipped</span>
+</div>
+
+<div class="stat-divider"></div>
+
+<div class="stat">
+<span class="stat-num">6th</span>
+<span class="stat-label">Semester</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
+<div class="container">
+
+<div class="section-header reveal">
+<h2>Projects</h2>
+<p>Things I have built to learn and solve real problems.</p>
+</div>
+
+<div class="projects-grid">
+
+<!-- ROLEvATE -->
+
+<div class="project-card featured reveal">
+
+<div class="project-top">
+
+<div class="project-badges">
+<span class="badge-status live">● Live</span>
+<span class="badge-type">Hackathon</span>
+</div>
+
+<div class="project-icon">🚀</div>
+
+</div>
+
+<h3>Rolevate AI</h3>
+
+<p>
+AI-powered career roadmap generator. Enter a company and role — get a complete preparation plan with skills, tools, projects, and interview questions.
+</p>
+
+<div class="tech-tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>AI API</span>
+</div>
+
+<div class="project-links">
+
+<a href="https://rolevate-ai.vercel.app" class="btn-project-primary" target="_blank">
+Live Demo →
+</a>
+
+<a href="https://github.com/Sidhant0707/rolevate-ai" class="btn-project-secondary" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+<!-- DSA TRACKER -->
+
+<div class="project-card reveal">
+
+<div class="project-top">
+
+<div class="project-badges">
+<span class="badge-status github">● GitHub</span>
+</div>
+
+<div class="project-icon">📊</div>
+
+</div>
+
+<h3>DSA Tracker CLI</h3>
+
+<p>
+Command-line tool built in C++ to track DSA problem-solving progress.
+</p>
+
+<div class="tech-tags">
+<span>C++</span>
+<span>CLI</span>
+<span>File I/O</span>
+</div>
+
+<div class="project-links">
+<a href="https://github.com/Sidhant0707" class="btn-project-secondary" target="_blank">
+GitHub →
+</a>
+</div>
+
+</div>
+
+<!-- GMAIL CLONE -->
+
+<div class="project-card reveal">
+
+<div class="project-top">
+
+<div class="project-badges">
+<span class="badge-status live">● Live</span>
+</div>
+
+<div class="project-icon">📧</div>
+
+</div>
+
+<h3>Gmail Clone</h3>
+
+<p>
+Frontend clone of Gmail focusing on layout architecture and pixel accurate UI.
+</p>
+
+<div class="tech-tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+<div class="project-links">
+
+<a href="#" class="btn-project-primary" target="_blank">Live Demo →</a>
+
+<a href="https://github.com/Sidhant0707" class="btn-project-secondary" target="_blank">GitHub</a>
+
+</div>
+
+</div>
+
+<!-- GRADEGAP -->
+
+<div class="project-card reveal">
+
+<div class="project-top">
+
+<div class="project-badges">
+<span class="badge-status progress">● In Progress</span>
+</div>
+
+<div class="project-icon">📚</div>
+
+</div>
+
+<h3>GradeGap</h3>
+
+<p>
+AI learning equity platform generating personalized micro-learning plans.
+</p>
+
+<div class="tech-tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>AI API</span>
+</div>
+
+<div class="project-links">
+<a href="#" class="btn-project-secondary">Coming Soon</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DSA SECTION -->
+
+<section class="section section-alt" id="dsa">
+
+<div class="container">
+
+<div class="section-header reveal">
+<h2>DSA Progress</h2>
+<p>Consistent daily practice following Striver's DSA Sheet.</p>
+</div>
+
+<div class="dsa-grid">
+
+<div class="dsa-stats-card reveal">
+
+<div class="dsa-platform">
+<span class="platform-name">LeetCode</span>
+<a href="https://leetcode.com/Sidhant_07" target="_blank" class="platform-link">
+@Sidhant_07 ↗
+</a>
+</div>
+
+<div class="dsa-numbers">
+
+<div class="dsa-num">
+<span class="num">56</span>
+<span class="num-label">Total Solved</span>
+</div>
+
+<div class="dsa-num easy">
+<span class="num">31</span>
+<span class="num-label">Easy</span>
+</div>
+
+<div class="dsa-num medium">
+<span class="num">24</span>
+<span class="num-label">Medium</span>
+</div>
+
+<div class="dsa-num hard">
+<span class="num">1</span>
+<span class="num-label">Hard</span>
+</div>
+
+</div>
+
+<div class="dsa-current">
+<span class="current-label">Currently Practicing</span>
+<span class="current-value">Binary Search Patterns</span>
+</div>
+
+<div class="dsa-goal">
+
+<span class="goal-label">Target before placements</span>
+
+<div class="progress-bar">
+<div class="progress-fill" style="width:32%"></div>
+</div>
+
+<span class="goal-numbers">56 / 300 problems</span>
+
+</div>
+
+</div>
+
+<div class="dsa-topics-card reveal">
+
+<h3>Topics Covered</h3>
+
+<div class="topics-list">
+
+<div class="topic done">
+<span class="topic-dot"></span>
+<span>Arrays & Strings</span>
+<span class="topic-status">Done</span>
+</div>
+
+<div class="topic done">
+<span class="topic-dot"></span>
+<span>Two Pointers</span>
+<span class="topic-status">Done</span>
+</div>
+
+<div class="topic active">
+<span class="topic-dot"></span>
+<span>Binary Search</span>
+<span class="topic-status current">In Progress</span>
+</div>
+
+<div class="topic upcoming">
+<span class="topic-dot"></span>
+<span>Linked Lists</span>
+<span class="topic-status upcoming-tag">Upcoming</span>
+</div>
+
+<div class="topic upcoming">
+<span class="topic-dot"></span>
+<span>Trees & Graphs</span>
+<span class="topic-status upcoming-tag">Upcoming</span>
+</div>
+
+<div class="topic upcoming">
+<span class="topic-dot"></span>
+<span>Dynamic Programming</span>
+<span class="topic-status upcoming-tag">Upcoming</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="js/main.js"></script>
+
 </body>
 </html>

@@ -8,13 +8,20 @@ requestAnimationFrame(raf)
 requestAnimationFrame(raf)
 
 
-gsap.from(".reveal",{
+gsap.utils.toArray(".reveal").forEach((el) => {
+
+gsap.from(el, {
 
 opacity:0,
-y:40,
+y:50,
 duration:1,
-stagger:0.2,
-ease:"power3.out"
+ease:"power3.out",
+scrollTrigger:{
+trigger:el,
+start:"top 80%"
+}
+
+})
 
 })
 

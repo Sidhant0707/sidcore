@@ -750,7 +750,7 @@ h2 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Card hover elevation — upgrade existing cards */
+/* Card hover elevation — upgrade existing cards. */
 .project-card:hover,
 .dsa-stats-card:hover,
 .dsa-topics-card:hover,

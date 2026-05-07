@@ -37,7 +37,8 @@ const projectsData = [
   {
     title: "CodeAutopsy",
     projectType: "AI Tool",
-    desc: "AI-powered tool that analyzes any GitHub repository and generates architecture insights, execution flow, tech stack, and dependency graphs.",
+    description:
+      "AI-powered tool that analyzes any GitHub repository and generates architecture insights, execution flow, tech stack, and dependency graphs.",
     tags: ["TypeScript", "GitHub API", "Static Analysis", "Mermaid", "Gemini"],
     status: "Live" as const,
     icon: <LuBot />,
@@ -47,7 +48,8 @@ const projectsData = [
   {
     title: "Rolevate AI",
     projectType: "Hackathon",
-    desc: "AI-powered career roadmap generator. Enter a company and role — get a complete preparation plan with skills, tools, projects, and interview questions.",
+    description:
+      "AI-powered career roadmap generator. Enter a company and role — get a complete preparation plan with skills, tools, projects, and interview questions.",
     tags: ["HTML", "CSS", "JavaScript", "AI API"],
     status: "Live" as const,
     icon: <LuRocket />,
@@ -57,7 +59,8 @@ const projectsData = [
   {
     title: "OfferVault",
     projectType: "Full-Stack",
-    desc: "A high-trust placement analytics platform for Indian engineering students. Implemented institutional email verification (.edu/.ac.in) and automated CTC breakdown logic.",
+    description:
+      "A high-trust placement analytics platform for Indian engineering students. Implemented institutional email verification (.edu/.ac.in) and automated CTC breakdown logic.",
     tags: ["Next.js 15", "Supabase", "TypeScript", "PostgreSQL", "Tailwind"],
     status: "Live" as const,
     icon: <LuLandmark />,
@@ -67,7 +70,8 @@ const projectsData = [
   {
     title: "DSA Tracker CLI",
     projectType: "CLI Tool",
-    desc: "Command-line tool built in C++ to track DSA problem-solving progress. Supports adding, viewing, and filtering problems by topic and difficulty.",
+    description:
+      "Command-line tool built in C++ to track DSA problem-solving progress. Supports adding, viewing, and filtering problems by topic and difficulty.",
     tags: ["C++", "CLI", "File I/O"],
     status: "GitHub" as const,
     icon: <LuChartBar />,
@@ -76,7 +80,8 @@ const projectsData = [
   {
     title: "GradeGap",
     projectType: "EdTech Platform",
-    desc: "AI learning equity platform that generates personalized micro-learning plans for any topic — giving every student access to quality explanation regardless of background.",
+    description:
+      "AI learning equity platform that generates personalized micro-learning plans for any topic — giving every student access to quality explanation regardless of background.",
     tags: ["HTML", "CSS", "JavaScript", "AI API"],
     status: "In Progress" as const,
     icon: <LuBook />,
@@ -362,7 +367,7 @@ export default function Home() {
               Data Structures & Algorithms
             </h2>
             <p className="text-zinc-400">
-              Solving DSA problems consistently while following Striver’s DSA
+              Solving DSA problems consistently while following Striver's DSA
               Sheet roadmap.
             </p>
           </div>

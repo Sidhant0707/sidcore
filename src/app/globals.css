@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f4f4f5;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(ellipse at top, #27272a 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-attachment: fixed;
+}
+
+img, svg {
+  display: inline-block;
+  vertical-align: middle;
+}

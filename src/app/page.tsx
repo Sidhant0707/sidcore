@@ -15,7 +15,6 @@ import {
 } from "react-icons/lu";
 import { SiLeetcode } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
-import "@/styles/page.css";
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -211,7 +210,6 @@ const currentStudies = [
 ];
 
 export default function Home() {
-  // IMPROVED: Enhanced state with loading and error tracking
   const [leetCodeStats, setLeetCodeStats] = useState({
     total: 56,
     easy: 31,
@@ -222,7 +220,6 @@ export default function Home() {
     error: null as string | null,
   });
 
-  // IMPROVED: Robust API fetching with multiple fallbacks
   useEffect(() => {
     const fetchLeetCodeStats = async () => {
       interface LeetCodeApiResponse {
@@ -284,7 +281,6 @@ export default function Home() {
         }
       }
 
-      // All APIs failed
       console.warn("⚠️ All LeetCode APIs failed. Using fallback data.");
       setLeetCodeStats((prev) => ({
         ...prev,
@@ -295,7 +291,6 @@ export default function Home() {
 
     fetchLeetCodeStats();
 
-    // Auto-refresh every 5 minutes
     const interval = setInterval(fetchLeetCodeStats, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
@@ -443,7 +438,6 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* IMPROVED: Loading and error states */}
               {leetCodeStats.loading && (
                 <div className="text-xs text-zinc-500 mb-4 animate-pulse">
                   📊 Fetching latest stats...

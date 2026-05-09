@@ -209,6 +209,20 @@ const currentStudies = [
   { icon: <LuNetwork />, name: "Computer Networks", desc: "TCP/IP, DNS, HTTP" },
 ];
 
+type AlfaLeetResp = {
+  solvedProblem?: number;
+  easySolved?: number;
+  mediumSolved?: number;
+  hardSolved?: number;
+};
+
+type HerokuLeetResp = {
+  totalSolved?: number;
+  easySolved?: number;
+  mediumSolved?: number;
+  hardSolved?: number;
+};
+
 export default function Home() {
   const [leetCodeStats, setLeetCodeStats] = useState({
     total: 56,
@@ -222,48 +236,45 @@ export default function Home() {
 
   useEffect(() => {
     const fetchLeetCodeStats = async () => {
-      interface LeetCodeApiResponse {
-        totalSolved?: number;
-        easySolved?: number;
-        mediumSolved?: number;
-        hardSolved?: number;
-      }
-
       const apis = [
         {
           name: "alfa-leetcode-api",
-          url: "https://alfa-leetcode-api.onrender.com/Sidhant_07",
-          transform: (data: LeetCodeApiResponse) => ({
-            total: data.totalSolved || 0,
-            easy: data.easySolved || 0,
-            medium: data.mediumSolved || 0,
-            hard: data.hardSolved || 0,
+          url: "https://alfa-leetcode-api.onrender.com/Sidhant_07/solved", // Added /solved
+          transform: (data: AlfaLeetResp) => ({
+            total: data.solvedProblem ?? 0, // Alfa uses solvedProblem
+            easy: data.easySolved ?? 0,
+            medium: data.mediumSolved ?? 0,
+            hard: data.hardSolved ?? 0,
           }),
         },
         {
           name: "leetcode-stats-api",
           url: "https://leetcode-stats-api.herokuapp.com/Sidhant_07",
-          transform: (data: LeetCodeApiResponse) => ({
-            total: data.totalSolved || 0,
-            easy: data.easySolved || 0,
-            medium: data.mediumSolved || 0,
-            hard: data.hardSolved || 0,
+          transform: (data: HerokuLeetResp) => ({
+            total: data.totalSolved ?? 0, // Heroku uses totalSolved
+            easy: data.easySolved ?? 0,
+            medium: data.mediumSolved ?? 0,
+            hard: data.hardSolved ?? 0,
           }),
         },
       ];
 
       for (const api of apis) {
         try {
-          console.log(`🔍 Fetching LeetCode stats from ${api.name}...`);
           const res = await fetch(api.url);
 
-          if (!res.ok) {
-            console.warn(`❌ ${api.name} returned ${res.status}`);
-            continue;
-          }
+          if (!res.ok) continue;
 
           const data = await res.json();
+
+          // Guard: Heroku API returns status: "error" if rate-limited
+          if (data.status === "error") continue;
+
           const stats = api.transform(data);
+
+          // CRITICAL FIX: If mapping failed and returned 0, reject it and try the next API
+          if (stats.total === 0) continue;
+
           const progress = Math.min((stats.total / 300) * 100, 100);
 
           setLeetCodeStats({
@@ -273,15 +284,13 @@ export default function Home() {
             error: null,
           });
 
-          console.log(`✅ Successfully fetched from ${api.name}:`, stats);
-          return;
-        } catch (error) {
-          console.warn(`❌ ${api.name} failed:`, error);
-          continue;
+          return; // Success! Exit the function.
+        } catch {
+          continue; // Network error, try the next API
         }
       }
 
-      console.warn("⚠️ All LeetCode APIs failed. Using fallback data.");
+      // If all APIs fail or return 0, fallback to the initial state (56) safely
       setLeetCodeStats((prev) => ({
         ...prev,
         loading: false,

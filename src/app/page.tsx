@@ -15,6 +15,7 @@ import {
 } from "react-icons/lu";
 import { SiLeetcode } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
+import "@/styles/page.css";
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -210,37 +211,93 @@ const currentStudies = [
 ];
 
 export default function Home() {
+  // IMPROVED: Enhanced state with loading and error tracking
   const [leetCodeStats, setLeetCodeStats] = useState({
     total: 56,
     easy: 31,
     medium: 24,
     hard: 1,
     progress: 18.6,
+    loading: true,
+    error: null as string | null,
   });
 
+  // IMPROVED: Robust API fetching with multiple fallbacks
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const res = await fetch(
-          "https://leetcode-stats-api.herokuapp.com/Sidhant_07",
-        );
-        if (!res.ok) throw new Error("API Network Error");
-        const data = await res.json();
-        if (data.status === "success") {
-          setLeetCodeStats({
-            total: data.totalSolved,
-            easy: data.easySolved,
-            medium: data.mediumSolved,
-            hard: data.hardSolved,
-            progress: Math.min((data.totalSolved / 300) * 100, 100),
-          });
-        }
-      } catch (error) {
-        console.warn("LeetCode API unavailable. Using fallback data.");
+    const fetchLeetCodeStats = async () => {
+      interface LeetCodeApiResponse {
+        totalSolved?: number;
+        easySolved?: number;
+        mediumSolved?: number;
+        hardSolved?: number;
       }
+
+      const apis = [
+        {
+          name: "alfa-leetcode-api",
+          url: "https://alfa-leetcode-api.onrender.com/Sidhant_07",
+          transform: (data: LeetCodeApiResponse) => ({
+            total: data.totalSolved || 0,
+            easy: data.easySolved || 0,
+            medium: data.mediumSolved || 0,
+            hard: data.hardSolved || 0,
+          }),
+        },
+        {
+          name: "leetcode-stats-api",
+          url: "https://leetcode-stats-api.herokuapp.com/Sidhant_07",
+          transform: (data: LeetCodeApiResponse) => ({
+            total: data.totalSolved || 0,
+            easy: data.easySolved || 0,
+            medium: data.mediumSolved || 0,
+            hard: data.hardSolved || 0,
+          }),
+        },
+      ];
+
+      for (const api of apis) {
+        try {
+          console.log(`🔍 Fetching LeetCode stats from ${api.name}...`);
+          const res = await fetch(api.url);
+
+          if (!res.ok) {
+            console.warn(`❌ ${api.name} returned ${res.status}`);
+            continue;
+          }
+
+          const data = await res.json();
+          const stats = api.transform(data);
+          const progress = Math.min((stats.total / 300) * 100, 100);
+
+          setLeetCodeStats({
+            ...stats,
+            progress,
+            loading: false,
+            error: null,
+          });
+
+          console.log(`✅ Successfully fetched from ${api.name}:`, stats);
+          return;
+        } catch (error) {
+          console.warn(`❌ ${api.name} failed:`, error);
+          continue;
+        }
+      }
+
+      // All APIs failed
+      console.warn("⚠️ All LeetCode APIs failed. Using fallback data.");
+      setLeetCodeStats((prev) => ({
+        ...prev,
+        loading: false,
+        error: "Using cached stats",
+      }));
     };
 
-    fetchStats();
+    fetchLeetCodeStats();
+
+    // Auto-refresh every 5 minutes
+    const interval = setInterval(fetchLeetCodeStats, 5 * 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
 
   const heroStats = [
@@ -351,10 +408,7 @@ export default function Home() {
               solve practical problems.
             </p>
           </div>
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            style={{ perspective: 1000 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 projects-grid-perspective">
             {projectsData.map((proj, i) => (
               <ProjectCard key={i} {...proj} />
             ))}
@@ -367,8 +421,8 @@ export default function Home() {
               Data Structures & Algorithms
             </h2>
             <p className="text-zinc-400">
-              Solving DSA problems consistently while following Striver's DSA
-              Sheet roadmap.
+              Solving DSA problems consistently while following Striver&apos;s
+              DSA Sheet roadmap.
             </p>
           </div>
 
@@ -382,12 +436,25 @@ export default function Home() {
                 <a
                   href="https://leetcode.com/Sidhant_07"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="text-sm text-zinc-300 hover:text-white"
                 >
                   @Sidhant_07 ↗
                 </a>
               </div>
+
+              {/* IMPROVED: Loading and error states */}
+              {leetCodeStats.loading && (
+                <div className="text-xs text-zinc-500 mb-4 animate-pulse">
+                  📊 Fetching latest stats...
+                </div>
+              )}
+
+              {leetCodeStats.error && (
+                <div className="text-xs text-amber-500/70 mb-4">
+                  ⚠️ {leetCodeStats.error}
+                </div>
+              )}
 
               <div className="grid grid-cols-4 gap-4 mb-8">
                 <div className="bg-black/50 p-4 rounded-xl text-center border border-white/5">
@@ -504,7 +571,7 @@ export default function Home() {
                       </div>
                       <div className="w-full h-1.5 bg-black rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-zinc-500"
+                          className="h-full bg-zinc-500 transition-all duration-1000 ease-out"
                           style={{ width: skill.val }}
                         />
                       </div>
@@ -554,9 +621,9 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-zinc-400 text-sm leading-relaxed mb-8">
                 <p>
-                  I'm a Computer Science student from Greater Noida focused on
-                  building practical software, learning system fundamentals, and
-                  preparing for software engineering roles.
+                  I&apos;m a Computer Science student from Greater Noida focused
+                  on building practical software, learning system fundamentals,
+                  and preparing for software engineering roles.
                 </p>
                 <p>
                   Solving DSA problems daily on LeetCode, studying DBMS, OS, and
@@ -590,7 +657,7 @@ export default function Home() {
 
             <div id="contact" className="flex flex-col justify-center">
               <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <div className="flex flex-col gap-4">
                 <a
@@ -613,7 +680,7 @@ export default function Home() {
                 <a
                   href="https://linkedin.com/in/sidhant07"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                   className="flex items-center gap-4 p-4 bg-black/50 rounded-xl border border-white/5 hover:border-zinc-500/50 transition-colors group"
                 >
                   <FaLinkedin
@@ -632,7 +699,7 @@ export default function Home() {
                 <a
                   href="https://github.com/Sidhant0707"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                   className="flex items-center gap-4 p-4 bg-black/50 rounded-xl border border-white/5 hover:border-zinc-500/50 transition-colors group"
                 >
                   <FaGithub

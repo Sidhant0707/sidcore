@@ -12,6 +12,7 @@ import {
   LuDatabase,
   LuCpu,
   LuNetwork,
+  LuZap,
 } from "react-icons/lu";
 import { SiLeetcode } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
@@ -34,6 +35,25 @@ const fadeUp: Variants = {
 };
 
 const projectsData = [
+  {
+    title: "0xtrace",
+    projectType: "AI Infra / OSS",
+    description:
+      "Open-source AI observability platform for LLM agents. Intercepts every API call via a JS Proxy with <2ms overhead, stores context diffs instead of full snapshots (85% DB cost reduction), flags runaway token loops in real time, and ships a live prompt replay engine. Published on npm as @0xtrace/sdk.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Upstash Redis",
+      "QStash",
+      "PostgreSQL",
+      "npm",
+    ],
+    status: "Live" as const,
+    icon: <LuZap />,
+    link: "https://0xtrace-mu.vercel.app/",
+    github: "https://github.com/Sidhant0707/0xtrace",
+  },
   {
     title: "CodeAutopsy",
     projectType: "AI Tool",
@@ -307,7 +327,7 @@ export default function Home() {
   const heroStats = [
     { num: leetCodeStats.total.toString(), label: "LeetCode Problems" },
     { num: "C++", label: "Primary Language" },
-    { num: "5+", label: "Projects Shipped" },
+    { num: "6+", label: "Projects Shipped" },
     { num: "Next.js", label: "Full-Stack Tech" },
     { num: "6th", label: "Semester" },
   ];
@@ -639,7 +659,7 @@ export default function Home() {
                   <span className="text-xs text-zinc-500 uppercase font-bold">
                     College
                   </span>
-                  <span className="text-sm text-white">GL Bajaj Institute</span>
+                  <span className="text-sm text-white">GL Bajaj Institute of Technology and Management</span>
                 </div>
                 <div className="flex justify-between border-b border-white/5 pb-2">
                   <span className="text-xs text-zinc-500 uppercase font-bold">
@@ -676,7 +696,7 @@ export default function Home() {
                       Email
                     </span>
                     <span className="block text-sm text-white">
-                      sidhantkumar0707@gmail.com
+                      buildwithsidhant@gmail.com
                     </span>
                   </div>
                 </a>

@@ -387,7 +387,7 @@ export default function Home() {
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-12">
             <a
-              href="/SidhantKumar_Resume.pdf"
+              href="/Sidhant_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors"
